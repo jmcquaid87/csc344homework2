@@ -1,14 +1,14 @@
 /*
  * =====================================================================================
  *
- *       Filename:  box.h
+ *       Filename:  crab.h
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  10/16/2016 02:12:46 PM
+ *        Created:  10/19/2016 07:55:44 PM
  *       Revision:  none
- *       Compiler:  g++
+ *       Compiler:  gcc
  *
  *         Author:  Justin McQuaid (jtetra5), jmcquaid@oswego.edu
  *   Organization:  State University of New York at Oswego
@@ -16,22 +16,14 @@
  * =====================================================================================
  */
 
-#ifndef BOX_H
-#define BOX_H
-#include "date.h"
+#ifndef CRAB_H
+#define CRAB_H
 #include <string>
+#include "date.h"
 using namespace std;
 
-class Box	
+class Crab : public Box
 {
-	public:
-		Box(string, string, int);
-		~Box()    {}
-	protected:
-        string productType;
-        Date date;
-		int productCount;
-
 
 };
 

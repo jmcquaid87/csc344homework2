@@ -1,14 +1,14 @@
 /*
  * =====================================================================================
  *
- *       Filename:  box.h
+ *       Filename:  date.h
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  10/16/2016 02:12:46 PM
+ *        Created:  10/19/2016 07:59:54 PM
  *       Revision:  none
- *       Compiler:  g++
+ *       Compiler:  gcc
  *
  *         Author:  Justin McQuaid (jtetra5), jmcquaid@oswego.edu
  *   Organization:  State University of New York at Oswego
@@ -16,22 +16,16 @@
  * =====================================================================================
  */
 
-#ifndef BOX_H
-#define BOX_H
-#include "date.h"
+#ifndef DATE_H
+#define DATE_H
 #include <string>
-using namespace std;
 
-class Box	
+class Date
 {
-	public:
-		Box(string, string, int);
-		~Box()    {}
-	protected:
-        string productType;
-        Date date;
-		int productCount;
-
+    public:
+		Date(int m, int d, int y);
+		~Date()	{}
+		isOlder(Date date);
 
 };
 
