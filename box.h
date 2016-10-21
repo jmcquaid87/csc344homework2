@@ -25,12 +25,13 @@ using namespace std;
 class Box	
 {
 	public:
-		Box(string, string, int);
+		Box();
 		~Box()    {}
+		bool full;
 	protected:
-        string productType;
-        Date date;
-		int productCount;
+       // string productType;
+        //Date date;
+		//int productCount;
 
 
 };

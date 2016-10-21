@@ -22,10 +22,16 @@
 
 class Date
 {
+	friend bool operator<(const Date& d1, const Date& d2);
+
     public:
 		Date(int m, int d, int y);
 		~Date()	{}
-		isOlder(Date date);
+	protected:
+		int month;
+		int day;
+		int year;
+	friend:
 
 };
 

@@ -23,20 +23,61 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <iostream>
 #include <string>
 #include <queue>
+#include <vector>
+#include <cstdlib>
 #include "box.h"
+#include "date.h"
 using namespace std;
 
-//priority_queue <Box *> box;
+Date::Date(int m, int d, int y)
+{
+	month = m;
+	day = d;
+	year = y;
+}
 
-Box::Box(string d, string t, int c)
+friend bool operator<(const Date& d1, const Date& d2)	{
+    if (d1.month < d2.month)	{
+		return d1.month < d2.month;
+	} else if (d1.day < d2.day)	{
+		return d1.day < d2.day;
+	} else if (d1.year < d2.year)	{
+		return d1.year < d2.year;
+	}
+}
+Shrimp::Box(string d, string t, int c)
 {
 	productType = t;
 	date = d;
 	productCount = c;
 }
 
+Crab::Box(string d, string t, int c)
+{
+	productType = t;
+	date = d;
+	productCount = c;
+}
+
+Lobster::Box(string d, string t, int c)
+{
+    productType = t;
+    date = d;
+	productCount = c;
+}
+
+Swordfish::Box(string d, string t, int c)
+{
+	productType = t;
+	date = d;
+	productCount = c;
+}
+
+
 int main(int argc, char *argv[])
 {
+	priority_queue<Shrimp> pqShrimp;
+
 	string event;
 	Date date;
 	string type;
@@ -46,7 +87,18 @@ int main(int argc, char *argv[])
 	   if (event == "q")	{
 		   break;
 	   }	
-		cin >> date;	
+		cin >> date.month;
+		if (date.month == "q")    {
+			break;
+		}
+	    cin >> date.day;
+		if (date.day == "q")    {
+			break;
+		}
+	    cin >> date.year;
+		if (date.year == "q")    {
+			break;
+		}
 		cin >> type;
 	   if (type == "q")	{
 		   break;
@@ -55,8 +107,16 @@ int main(int argc, char *argv[])
 		if (boxCount == "q")	{	
 		    break;
 		}
-	    //cout << event << date << type << boxCount;
-	}
-//	priority_queue <Box> pqBox;
+		if ( event == "stock" && type == "shrimp")	{
+            Shrimp shrimp(type, date, 50);
+		} else if (event == "stock" && type == "swordfish") {
+            Swordfish swordfish(type, date, 8);
+		} else if (event == "stock" && type == "lobster") {
+            Lobster lobster(type, date, 4);
+		} else if (event == "stock" && type == "crab") {
+			Crab crab(type, date, 6);
+		} else if (event == "buy" && type == "shrimp") {
 
+		}
+	}
 }
