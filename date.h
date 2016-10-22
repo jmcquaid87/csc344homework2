@@ -22,7 +22,7 @@
 
 class Date
 {
-	friend bool operator<(const Date& d1, const Date& d2);
+	friend bool operator<(Date, Date);
 
     public:
 		Date(int m, int d, int y);
@@ -31,8 +31,6 @@ class Date
 		int month;
 		int day;
 		int year;
-	friend:
-
 };
 
 #endif

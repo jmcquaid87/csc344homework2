@@ -28,4 +28,3 @@ class Swordfish : public Box
 };
 
 #endif
-}

@@ -27,4 +27,3 @@ class Lobster : public Box
 };
 
 #endif
-}

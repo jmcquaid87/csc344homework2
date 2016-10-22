@@ -26,6 +26,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <vector>
 #include <cstdlib>
 #include "box.h"
+#include "shrimp.h"
+#include "crab.h"
+#include "swordfish.h"
+#include "lobster.h"
 #include "date.h"
 using namespace std;
 
@@ -36,7 +40,7 @@ Date::Date(int m, int d, int y)
 	year = y;
 }
 
-friend bool operator<(const Date& d1, const Date& d2)	{
+friend bool operator<(Date d1, Date d2)	{
     if (d1.month < d2.month)	{
 		return d1.month < d2.month;
 	} else if (d1.day < d2.day)	{
@@ -45,6 +49,7 @@ friend bool operator<(const Date& d1, const Date& d2)	{
 		return d1.year < d2.year;
 	}
 }
+
 Shrimp::Box(string d, string t, int c)
 {
 	productType = t;
@@ -78,9 +83,8 @@ int main(int argc, char *argv[])
 {
 	priority_queue<Shrimp> pqShrimp;
 
-	string event;
-	Date date;
-	string type;
+	//string event;
+	//string type;
 	int boxCount;
 	while (true)	{
 	    cin >> event;
@@ -108,7 +112,8 @@ int main(int argc, char *argv[])
 		    break;
 		}
 		if ( event == "stock" && type == "shrimp")	{
-            Shrimp shrimp(type, date, 50);
+            Date date(
+			Shrimp shrimp(type, date, 50);
 		} else if (event == "stock" && type == "swordfish") {
             Swordfish swordfish(type, date, 8);
 		} else if (event == "stock" && type == "lobster") {
