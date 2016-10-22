@@ -18,14 +18,13 @@
 
 #ifndef DATE_H
 #define DATE_H
-#include <string>
 
 class Date
 {
 	friend bool operator<(Date, Date);
 
     public:
-		Date(int m, int d, int y);
+		Date(int, int, int);
 		~Date()	{}
 	protected:
 		int month;
